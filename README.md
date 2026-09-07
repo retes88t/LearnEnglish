@@ -1,25 +1,33 @@
-# Adjetivos en inglés — Flashcards
+# Aprender inglés — Flashcards
 
-App en React + Vite para aprender los adjetivos en inglés de [instrucciones.md](instrucciones.md) con flashcards.
+App en React + Vite para practicar vocabulario y gramática del inglés con flashcards, quizzes y ejercicios de identificación en texto. Está organizada en **módulos** independientes; cada uno tiene su propio banco de palabras y su propio progreso.
 
 ## Módulos
 
+- **🧠 Adjetivos**: los adjetivos comunes en inglés.
+- **🔗 Linking Verbs**: los verbos de enlace (am, is, was, become, get...).
+- **⏳ Irregular Verbs**: verbos irregulares (base / pasado simple / participio pasado).
+- **🔥 Extreme Adjectives**: adjetivos extremos (no graduables), como "huge" o "furious".
+- **⏱️ Present & Past Simple**: el verbo *to be*, los auxiliares *do/does/did* y las reglas de ortografía de la 3ª persona.
+
+Casi todos los módulos comparten las mismas 4 pestañas:
+
 - **📖 Estudio**: flashcards que se voltean al hacer clic. Marca cada palabra como "Ya me la sé" o "Necesito repasar"; puedes filtrar para ver solo las pendientes. Tiene dos tipos, con el mismo switch que el examen:
-  - 🌐 **Traducción**: inglés ↔ español.
-  - 🇬🇧 **Solo inglés**: la palabra ↔ su definición en inglés, sin pasar por el español.
-- **📝 Examen**: quiz de opción múltiple (15 preguntas) con retroalimentación inmediata y puntaje final. Tiene dos tipos, seleccionables con un switch arriba del examen:
-  - 🌐 **Traducción**: inglés→español o español→inglés al azar.
-  - 🇬🇧 **Solo inglés**: todo en inglés, sin pasar por el español — relaciona la palabra con su definición en inglés (dirección "palabra → definición" o "definición → palabra" al azar).
-- **🔍 Identificar**: pega cualquier texto en inglés y haz clic en las palabras que creas que son adjetivos (cada clic la colorea). Al presionar "Revisar" se compara contra tu lista de práctica y, para lo que marcaste fuera de ella, contra un diccionario de referencia de ~1100 adjetivos comunes ([src/data/commonAdjectives.js](src/data/commonAdjectives.js)):
+  - 🌐 **Traducción**: inglés ↔ español (donde aplique).
+  - 🇬🇧 **Solo inglés**: la palabra ↔ su definición/ejemplo en inglés, sin pasar por el español.
+- **📝 Examen**: quiz de opción múltiple con retroalimentación inmediata y puntaje final. Mismos dos tipos que Estudio.
+- **🔍 Identificar**: pega cualquier texto en inglés y haz clic en las palabras que creas que pertenecen a la categoría del módulo (cada clic la colorea). Al presionar "Revisar" se compara contra tu lista de práctica y, para lo que marcaste fuera de ella, contra un diccionario de referencia (cuando el módulo lo tiene):
   - 🟢 verde = acierto (la marcaste y está en tu lista),
   - 🟠 ámbar = se te escapó (está en tu lista y no la marcaste),
-  - 🔵 azul = la marcaste, no está en tu lista, pero sí parece un adjetivo real (incluye una comprobación simple de comparativo/superlativo: "faster", "biggest", etc.),
-  - ⚪ gris = la marcaste y no se reconoce como adjetivo común (puede seguir siendo válida; el diccionario de referencia es una heurística, no un analizador gramatical).
+  - 🔵 azul = la marcaste, no está en tu lista, pero sí parece válida según el diccionario de referencia,
+  - ⚪ gris = la marcaste y no se reconoce (puede seguir siendo válida; el diccionario de referencia es una heurística, no un analizador gramatical).
 
-  Los aciertos y los que se te escapan alimentan el mismo progreso que estudio y examen. Incluye 6 textos de ejemplo (mascota, restaurante, clima, persona, tecnología, ciudad) que entre todos cubren las 50 palabras de la lista.
+  Los aciertos y los que se te escapan alimentan el mismo progreso que Estudio y Examen. Cada módulo incluye varios textos de ejemplo para practicar.
 - **📊 Progreso**: resumen de palabras nuevas / en progreso / dominadas, con lista filtrable ordenada por lo que más necesitas repasar, y opción de reiniciar el progreso.
 
-Una palabra se marca como **dominada** al acertar 3 veces seguidas (en estudio o examen); un fallo reinicia su racha. El progreso se guarda automáticamente en `localStorage`, por lo que persiste entre sesiones en el mismo navegador.
+El módulo **⏱️ Present & Past Simple** reemplaza "Identificar" por **🔤 Reglas** (práctica de ortografía de la 3ª persona), ya que no es una tarea de identificar palabras en texto.
+
+Una palabra se marca como **dominada** al acertar 3 veces seguidas (en Estudio o Examen); un fallo reinicia su racha. El progreso de cada módulo se guarda por separado en `localStorage`, por lo que persiste entre sesiones en el mismo navegador.
 
 ## Uso
 
@@ -34,18 +42,18 @@ npm run lint      # oxlint
 
 ```
 src/
-  data/adjectives.js      # las 50 palabras (inglés/español + definición en inglés)
-  data/commonAdjectives.js # diccionario de referencia (~1100 adjetivos) para el modo Identificar
-  data/sampleTexts.js     # 6 textos de ejemplo para el modo Identificar (cubren las 50 palabras)
-  hooks/useProgress.js    # persistencia y cálculo de progreso (localStorage)
-  utils/shuffle.js        # utilidad de mezcla aleatoria
-  components/
-    FlashCard.jsx
-    StudyMode.jsx
-    ExamMode.jsx
-    IdentifyMode.jsx
-    ProgressBoard.jsx
-    Nav.jsx
+  modules/
+    index.js               # registro central: qué módulos existen
+    adjectives/
+      index.js              # config del módulo (labels, identify, storageKey...)
+      data/                 # palabras, diccionario de referencia, textos de ejemplo
+    linkingVerbs/
+    irregularVerbs/
+    extremeAdjectives/
+    presentPastSimple/      # módulo con pestañas y componentes propios
+  components/                # Nav, StudyMode, ExamMode, IdentifyMode, ProgressBoard...
+  hooks/useProgress.js        # persistencia y cálculo de progreso (localStorage)
+  utils/                      # shuffle, slugify, speak
 ```
 
-Para agregar más palabras, edita el arreglo `RAW_ADJECTIVES` en `src/data/adjectives.js`.
+Para agregar un módulo nuevo, creá su carpeta en `src/modules/<nombre>/` (siguiendo la forma de `adjectives` o `linkingVerbs`) y registralo en `src/modules/index.js`. Para agregar palabras a un módulo existente, editá su archivo de datos en `src/modules/<nombre>/data/`.

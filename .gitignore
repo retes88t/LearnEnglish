@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+
+# Claude Code — estado/config local de esta máquina, no del proyecto
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.features
