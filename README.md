@@ -34,7 +34,7 @@ Una palabra se marca como **dominada** al acertar 3 veces seguidas (en Estudio o
 ```bash
 npm install
 npm run dev      # servidor de desarrollo
-npm run build    # build de producción en dist/
+npm run build    # build de producción en docs/ (servido por GitHub Pages)
 npm run lint      # oxlint
 ```
 

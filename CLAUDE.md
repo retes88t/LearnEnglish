@@ -11,14 +11,14 @@ React + Vite SPA for practicing English vocabulary/grammar through flashcards, q
 ```bash
 npm install
 npm run dev       # dev server (Vite)
-npm run build     # production build to dist/
+npm run build     # production build to docs/ (served by GitHub Pages)
 npm run lint      # oxlint
 npm run preview   # preview the production build
 ```
 
 There is no test suite configured in this repo.
 
-`dist/` is committed to the repo on purpose (likely for static hosting straight from the built folder) even though there's no CI workflow — don't delete it or add it to `.gitignore` as "build junk".
+`docs/` is committed to the repo on purpose — it's the Vite build output (`outDir: 'docs'` in `vite.config.js`) and is what GitHub Pages serves directly (Settings → Pages → Deploy from branch → `main` / `/docs`), with no CI workflow involved. After changing anything under `src/`, run `npm run build` and commit the updated `docs/` output so the deployed site stays in sync. Don't delete `docs/` or add it to `.gitignore` as "build junk".
 
 ## Architecture: module system
 
