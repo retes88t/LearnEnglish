@@ -124,7 +124,7 @@ const RAW_EXAM_SENTENCES = [
   ],
   [
     'Do your parents live in the same city as you?',
-    'Tus padres viven en la misma ciudad que vos?',
+    'Tus padres viven en la misma ciudad que tú?',
     '___ your parents live in the same city as you?',
     'Do',
     ['Do', 'Does', 'Did', 'Are'],
@@ -134,7 +134,7 @@ const RAW_EXAM_SENTENCES = [
   ],
   [
     'Do your parents live in the same city as you?',
-    'Tus padres viven en la misma ciudad que vos?',
+    'Tus padres viven en la misma ciudad que tú?',
     'Do your parents ___ in the same city as you?',
     'live',
     ['live', 'lives', 'lived', 'living'],
@@ -329,7 +329,7 @@ const RAW_NEW_SENTENCES = [
   ],
   [
     'Were you and Laura at the party last Saturday?',
-    'Estuvieron vos y Laura en la fiesta el sábado pasado?',
+    'Estuvieron tú y Laura en la fiesta el sábado pasado?',
     '___ you and Laura at the party last Saturday?',
     'Were',
     ['Were', 'Was', 'Are', 'Is'],
