@@ -1,8 +1,29 @@
 # Aprender inglés — Flashcards
 
+Una app web gratuita para practicar vocabulario y gramática del inglés, pensada para cualquier persona que quiera repasar inglés de forma simple y ordenada — desde estudiantes hasta quien solo quiere reforzar palabras y reglas puntuales.
+
+## 🎯 ¿Qué puedes hacer con esta app?
+
+La práctica está organizada en **módulos** (por ejemplo, adjetivos, verbos de enlace, verbos irregulares...). Cada módulo te deja:
+
+- **📖 Estudiar con flashcards**: tarjetas que se dan vuelta al hacer clic, mostrando la traducción o la definición según el caso. Marcas cada una como "Ya me la sé" o "Necesito repasar".
+- **📝 Presentar un examen**: un quiz de opción múltiple con corrección inmediata y un puntaje final, para ver cuánto retuviste.
+- **🔍 Identificar palabras en un texto**: pegas cualquier texto en inglés y haces clic en las palabras que creas que pertenecen a la categoría que estás practicando (por ejemplo, los adjetivos). La app te dice qué acertaste y qué se te escapó.
+- **📊 Ver tu progreso**: un resumen de qué palabras son nuevas, cuáles estás repasando y cuáles ya dominas, para saber en qué enfocarte.
+
+Tu progreso se guarda automáticamente en el navegador, así que puedes cerrar la app y retomar más tarde sin perder nada.
+
+## 🚀 Cómo empezar a usarla
+
+No hace falta instalar nada ni crear una cuenta: entra a la app desde el navegador, elige un módulo desde las pestañas de arriba y empieza a practicar. Si eres la persona que la mantiene o quieres correrla en tu computadora, mira la sección técnica más abajo.
+
+---
+
+## Detalle técnico de los módulos
+
 App en React + Vite para practicar vocabulario y gramática del inglés con flashcards, quizzes y ejercicios de identificación en texto. Está organizada en **módulos** independientes; cada uno tiene su propio banco de palabras y su propio progreso.
 
-## Módulos
+### Módulos
 
 - **🧠 Adjetivos**: los adjetivos comunes en inglés.
 - **🔗 Linking Verbs**: los verbos de enlace (am, is, was, become, get...).
@@ -56,4 +77,4 @@ src/
   utils/                      # shuffle, slugify, speak
 ```
 
-Para agregar un módulo nuevo, creá su carpeta en `src/modules/<nombre>/` (siguiendo la forma de `adjectives` o `linkingVerbs`) y registralo en `src/modules/index.js`. Para agregar palabras a un módulo existente, editá su archivo de datos en `src/modules/<nombre>/data/`.
+Para agregar un módulo nuevo, crea su carpeta en `src/modules/<nombre>/` (siguiendo la forma de `adjectives` o `linkingVerbs`) y regístralo en `src/modules/index.js`. Para agregar palabras a un módulo existente, edita su archivo de datos en `src/modules/<nombre>/data/`.
