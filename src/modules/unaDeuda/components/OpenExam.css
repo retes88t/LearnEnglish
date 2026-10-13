@@ -1,0 +1,127 @@
+
+.ud-oe-card {
+  min-width: 0;
+}
+
+.ud-oe-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ud-oe-progress,
+.ud-oe-prompt-label,
+.ud-oe-legend {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.ud-oe-prompt {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.ud-oe-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+}
+
+
+.ud-oe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ud-oe-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ud-oe-verdict {
+  margin: 0;
+  font-weight: 700;
+}
+
+.ud-oe-verdict.is-correct {
+  color: var(--success);
+}
+
+.ud-oe-verdict.is-wrong {
+  color: var(--danger);
+}
+
+.ud-oe-diff {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  line-height: 1.6;
+}
+
+.ud-oe-token {
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+.ud-oe-ok {
+  background: var(--success-bg);
+}
+
+.ud-oe-missing {
+  background: var(--warning-bg);
+  border: 1px dashed var(--text-muted);
+}
+
+.ud-oe-wrong {
+  background: var(--danger-bg);
+  text-decoration: underline wavy var(--danger);
+}
+
+.ud-oe-extra {
+  background: var(--danger-bg);
+  text-decoration: line-through;
+}
+
+.ud-oe-mark {
+  font-weight: 700;
+}
+
+.ud-oe-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.ud-oe-correct {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.ud-oe-score {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ud-oe-similarity {
+  margin: 0;
+  color: var(--text-muted);
+}

@@ -1,0 +1,91 @@
+.erase-practice {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.erase-levels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.erase-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.erase-sentence {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 2.2;
+  overflow-wrap: anywhere;
+}
+
+.erase-word {
+  display: inline-block;
+  margin-right: 0.35em;
+}
+
+.erase-input {
+  font: inherit;
+  max-width: 100%;
+  box-sizing: content-box;
+  padding: 0.1rem 0.35rem;
+  margin: 0 0.1rem;
+  border: none;
+  border-bottom: 2px solid currentColor;
+  border-radius: 4px 4px 0 0;
+  background: rgba(127, 127, 127, 0.12);
+  color: inherit;
+  text-align: center;
+}
+
+.erase-input.is-correct {
+  border-bottom-color: #2e9e5b;
+  background: rgba(46, 158, 91, 0.18);
+}
+
+.erase-input.is-wrong {
+  border-bottom-color: #d64545;
+  background: rgba(214, 69, 69, 0.18);
+}
+
+.erase-solution {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #d64545;
+}
+
+.erase-solution.is-ok {
+  color: #2e9e5b;
+}
+
+.erase-feedback {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.erase-feedback.is-correct {
+  color: #2e9e5b;
+}
+
+.erase-feedback.is-wrong {
+  color: #d64545;
+}
+
+.erase-progress {
+  font-weight: 600;
+}
+
+.erase-context {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.75;
+  overflow-wrap: anywhere;
+}
