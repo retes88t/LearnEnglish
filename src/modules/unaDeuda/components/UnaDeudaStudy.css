@@ -1,0 +1,53 @@
+.ud-script {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ud-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.ud-line-body {
+  min-width: 0;
+}
+
+.ud-speaker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ud-text {
+  margin: 2px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.ud-ella {
+  opacity: 0.6;
+  background: #f3f4f6;
+  color: #374151;
+  margin-right: 12%;
+}
+
+.ud-el {
+  background: #eef2ff;
+  color: #1e1b4b;
+  border-left: 4px solid #4f46e5;
+  margin-left: 12%;
+}
+
+.ud-el .ud-text {
+  font-weight: 600;
+  font-size: 1.05rem;
+}

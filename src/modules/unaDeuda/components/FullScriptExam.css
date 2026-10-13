@@ -1,0 +1,47 @@
+.ud-fs-transcript {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ud-fs-line {
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+.ud-fs-ella {
+  color: var(--text-muted);
+  margin-right: 2rem;
+}
+
+.ud-fs-el {
+  margin-left: 2rem;
+  border-left: 3px solid var(--accent, var(--border));
+}
+
+.ud-fs-speaker {
+  font-weight: 700;
+}
+
+.ud-fs-badge {
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ud-fs-badge.is-correct {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.ud-fs-badge.is-wrong {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
